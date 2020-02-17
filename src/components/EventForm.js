@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import {CREATE_EVENT, DELETE_ALL_EVENTS} from  '../action'
+import AppContext from '../contexts/AppContext'
+import App from "./App";
 //import reducer from "../reducers";
 
-const EventForm = ({state, dispatch}) => {
+const EventForm = () => {
+  const {state, dispatch} = useContext(AppContext)
   //const [state, dispatch] = useReducer(reducer, []);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
